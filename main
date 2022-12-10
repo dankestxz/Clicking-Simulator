@@ -1,0 +1,65 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+
+local Window = Library.CreateLib("Mineral Hub", "BloodTheme")
+
+-- MAIN
+
+local Main = Window:NewTab("Main")
+
+local MainSection = Main:NewSection("Main")
+
+MainSection:NewButton("AutoClick", "AutoClicker Press V for on/off", function()
+
+        local time = 0.01 --decrease if too slow increase if too fast
+
+    
+
+        click = false
+
+        m = game.Players.LocalPlayer:GetMouse()
+
+        m.KeyDown:connect(function(key)
+
+        if key == "v" then
+
+        if click == true then click = false
+
+        elseif
+
+        click == false then click = true
+
+        
+
+        while click == true do 
+
+        wait(time)
+
+        mouse1click()
+
+        end
+
+        end
+
+        end
+
+        end)
+
+    end)
+
+MainSection:NewSlider("HighJump", "Makes u jump high", 500, 0, function(s) -- 500 (MaxValue) | 0 (MinValue)
+
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+
+end)
+
+MainSection:NewSlider("HighSpeed", "vreoom", 500, 0, function(s) -- 500 (MaxValue) | 0 (MinValue)
+
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+
+end)
+
+-- CREDITS
+
+local Main = Window:NewTab("Credits")
+
+local MainSection = Main:NewSection("Credits to visolarity#9600 for helping me")
